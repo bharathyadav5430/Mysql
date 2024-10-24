@@ -1,0 +1,78 @@
+Day 1: Introduction to Databases and Basic Commands
+We kicked off by exploring fundamental SQL commands to manage databases and tables:
+
+SHOW DATABASES: Lists all databases.
+CREATE DATABASE techforallwithnikhil: Creates a new database.
+USE techforallwithnikhil: Switches to the database.
+CREATE TABLE employee: We created a simple employee table with columns like FirstName, LastName, Age, and Salary.
+
+Sample Query:
+
+INSERT INTO employee(FirstName, LastName, Age, Salary, Location)
+VALUES ("NIKHIL", "NEGI", 21, 1500, "Delhi");
+Some key data types covered were:
+
+INT: Integer values
+VARCHAR: Variable-length strings
+TIMESTAMP: Date and time values
+
+By the end of Day 1, we learned how to insert data, query data using SELECT *, filter data with WHERE, and even update or delete specific records.
+
+Day 2: Working with Multiple Tables
+On Day 2, we advanced by creating a courses table and a learners table, which demonstrates how to handle relationships between tables using foreign keys.
+
+CREATE TABLE courses: Created a courses table with course information such as CourseName, CourseDurationMonths, and CourseFee.
+CREATE TABLE learners: Introduced foreign key constraints, linking the learners table to courses. This helped us understand how to model relationships between entities in databases.
+
+We inserted some records into the learners table and wrote queries to retrieve records using joins. We also learned how to aggregate data using functions like COUNT(), MAX(), MIN(), and SUM().
+
+Aggregation Example:
+
+SELECT COUNT(*) as num_of_enrollments
+FROM learners;
+Day 3: Grouping and Filtering Data
+Day 3 was all about data analysis! We learned how to group data using the GROUP BY clause and filter results with HAVING.
+
+GROUP BY: Helped us find insights such as the number of learners who joined courses via LinkedIn, YouTube, or other sources.
+
+Example Query:
+
+SELECT SourceOfJoining, COUNT(*) as num_of_students
+FROM learners
+GROUP BY SourceOfJoining;
+This session also introduced logical operators like AND, OR, and NOT, which are crucial for creating more complex queries and conditions.
+
+Day 4: Advanced Querying Techniques
+On Day 4, we focused on performing advanced queries like:
+
+BETWEEN: Filtering records based on a range of values (e.g., finding learners with years of experience between 1 and 3).
+ALTER TABLE: Modifying the structure of tables. We learned how to add, modify, or drop columns and constraints dynamically.
+
+Example:
+
+ALTER TABLE employee ADD COLUMN JobPosition varchar(50);
+We also touched on DELETE vs TRUNCATE commands. While DELETE removes individual records, TRUNCATE quickly clears an entire table.
+
+Day 5: Subqueries and Joins
+On Day 5, we explored subqueries and different types of joins (INNER, LEFT, RIGHT, FULL). Joins allow us to combine data from multiple tables based on related columns.
+
+Subquery Example:
+
+SELECT * FROM employee
+WHERE Salary > (SELECT AVG(Salary) FROM employee);
+Day 6: Indexing and Performance Optimization
+Day 6 was all about optimizing queries. We explored:
+
+Indexes: How indexing helps speed up queries, especially when dealing with large datasets.
+EXPLAIN: Used to analyze query performance and identify bottlenecks.
+
+Day 7: Backup, Restore, and Data Security
+On the final day, we discussed data backup strategies to ensure data safety:
+
+BACKUP DATABASE: Commands to back up your database for disaster recovery.
+GRANT and REVOKE: Managing user permissions to ensure data security.
+
+Final Thoughts
+Completing this 7-day MySQL bootcamp has given me a solid foundation in relational database management. Huge thanks to my mentor, Priya Bhatia , for making the learning process seamless and insightful. SQL is a powerful tool, and mastering it opens doors to various career opportunities, whether in data analysis, software development, or database administration.
+
+I highly recommend anyone interested in working with databases to start learning MySQL. It’s one of the most widely used database systems and provides a strong base for learning other SQL-based systems like PostgreSQL or Microsoft SQL Server.
